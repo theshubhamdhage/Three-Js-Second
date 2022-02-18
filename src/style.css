@@ -9,7 +9,10 @@ body
 {
     height: 100vh;
     font-family: 'Poppins';
-}
+    /* background: hsl(136, 8%, 39%); */
+    background:  radial-gradient(circle at -100%, rgb(20, 20, 20) 50%, rgba(22, 22, 22, 0.685) 75%, rgba(0, 0, 0, 0.363) 100%);
+
+}  
 
 .webgl
 {
