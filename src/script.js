@@ -25,7 +25,7 @@ const scene = new THREE.Scene()
 
 
 //our object
-gltfLoader.load('finalModel.gltf', (gltf)=>{
+gltfLoader.load('finalModel1.gltf', (gltf)=>{
     gltf.scene.scale.set(0.4,0.4,0.4)
     // gltf.scene.rotate.y =54;
     scene.add(gltf.scene)
@@ -49,23 +49,60 @@ const pointLight2 = new THREE.PointLight(0xffffff, intensity) //z +ve
 pointLight2.position.set(0,0,3)
 scene.add(pointLight2)
 
+const pointLight2_1 = new THREE.PointLight(0xffffff, intensity) //z -ve
+pointLight2_1.position.set(0,0,-3)
+scene.add(pointLight2_1)
+
 const pointLight3 = new THREE.PointLight(0xffffff, intensity) //y +ve
 pointLight3.position.set(0,3,0)
 scene.add(pointLight3)
 
+const pointLight3_1 = new THREE.PointLight(0xffffff, intensity) //y -ve
+pointLight3_1.position.set(0,-3,0)
+scene.add(pointLight3_1)
 
-const pointLight4 = new THREE.DirectionalLight(0xffffff, 5) //ambient on 1st quadrant
+
+//ambient properties
+const AP={
+    AmbientIntensity:2,
+    blue:0x1829FF,
+    purple:0x9330FD,
+    pink:0xDB2AFF,
+
+}
+
+
+const pointLight4 = new THREE.DirectionalLight(AP.blue, AP.AmbientIntensity) 
+pointLight4.position.set(3,3,3)
 scene.add(pointLight4)
 
-const pointLight5 = new THREE.DirectionalLight(0xffffff, 5) //ambient on 1st quadrant
+const pointLight5 = new THREE.DirectionalLight(AP.purple, AP.AmbientIntensity) 
 pointLight5.position.set(-3,3,3)
 scene.add(pointLight5)
 
-const pointLight6 = new THREE.DirectionalLight(0xffffff, 5) //ambient on 1st quadrant
+const pointLight7 = new THREE.DirectionalLight(AP.blue, AP.AmbientIntensity) 
+pointLight7.position.set(-3,3,-3)
+scene.add(pointLight7)
+
+const pointLight8 = new THREE.DirectionalLight(AP.purple, AP.AmbientIntensity) 
+pointLight8.position.set(3,3,-3)
+scene.add(pointLight8)
+
+const pointLight9 = new THREE.DirectionalLight(AP.pink, AP.AmbientIntensity) 
+pointLight9.position.set(3,-3,-3)
+scene.add(pointLight9)
+
+const pointLight10 = new THREE.DirectionalLight(AP.blue, AP.AmbientIntensity) 
+pointLight10.position.set(3,-3,3)
+scene.add(pointLight10)
+
+const pointLight11 = new THREE.DirectionalLight(AP.pink, AP.AmbientIntensity) 
+pointLight11.position.set(-3,-3,3)
+scene.add(pointLight11)
+
+const pointLight6 = new THREE.DirectionalLight(AP.purple, AP.AmbientIntensity) 
 pointLight6.position.set(-3,-3,-3)
 scene.add(pointLight6)
-
-
 
 
 /**
